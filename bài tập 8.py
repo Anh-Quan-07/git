@@ -1,15 +1,17 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Nov 24 14:39:14 2020
+Created on Tue Nov 24 22:58:41 2020
 
 @author: quann
 """
 
-h=int(input("Nhập số lần bạn muốn gửi tới = "))
-i=0
-i=int(i)
-while i<h:
-     a = (input("Nhập địa chỉ gmail bạn muốn gửi  "));
-     b = (input("Nhập thông điệp bạn muốn gửi   "));
-     i+=1 
-print("kết thúc vòng lặp vs h lần gửi !!!")     
+import smtplib
+server = smtplib.SMTP('oanhphuhau@gmail.com', 587)
+server.starttls()
+server.login("quannguyentien2612002@gmail.com"," nevergiveuppp ")
+msg = "Chào thầy ạ "
+for i in range(6):
+    if i<6:
+        server.sendmail("quannguyentien2612002@gmail.com","nevergiveuppp",msg)
+        i+=1
+server.quit()
